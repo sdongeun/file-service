@@ -1,0 +1,52 @@
+server:
+  port: 8181
+spring:
+  config:
+    import: "optional:configserver:"
+  application:
+    name: file-service
+  datasource:
+    url: jdbc:postgresql://172.16.28.217:5433/filerepo
+    user: "ndxservice"
+    password: "ndxpro123@"
+  jpa:
+    hibernate:
+      ddl-auto: update
+      generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  rabbitmq:
+    host: 172.16.28.218
+    port: 5672
+    username: "ndxpro"
+    password: "ndxpro2!"
+    virtual-host: ndxprodev
+  servlet:
+    multipart:
+      maxFileSize: 4GB
+      maxRequestSize: 4GB
+  zipkin:
+    base-url: http://172.16.28.217:9411
+    enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
+
+file:
+  upload-dir: c:/upload
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://172.16.28.217:8761/eureka
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+gateway:
+  ip: 0.0.0.0
