@@ -9,11 +9,11 @@
 		<version>2.5.5</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>kr.co.e8ight</groupId>
-	<artifactId>ndxpro</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>ndxpro</name>
-	<description>NDX Pro project for Spring Boot</description>
+	<groupId>kr.co.e8ight.management</groupId>
+	<artifactId>file-serivce</artifactId>
+	<version>1.0.0</version>
+	<name>file-service</name>
+	<description>file-service</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

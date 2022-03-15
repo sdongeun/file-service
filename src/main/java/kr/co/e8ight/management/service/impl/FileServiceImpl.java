@@ -141,7 +141,7 @@ public class FileServiceImpl implements FileService {
                 request.setFileType(fileType);
                 request.setUserId(userId);
                 request.setRequestStatus("Download");
-                request.setResult("File Donwload Success");
+                request.setResult("File Download Success");
                 this.userRequestRepository.save(request);
                 response.setResource(resource);
                 response.setOriginFileName(URLEncoder.encode(fileInfo.getFileName() + "." + fileInfo.getFileExtension(), "UTF-8").replaceAll("\\+", "%20"));

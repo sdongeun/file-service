@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface FileRepository extends JpaRepository<FileEntity, Integer> {
     @Query(nativeQuery = true, value="SELECT count(*) FROM files f WHERE checksum = ?1")
@@ -18,4 +20,6 @@ public interface FileRepository extends JpaRepository<FileEntity, Integer> {
 
     @Query(nativeQuery = true, value = "SELECT * FROM files f WHERE file_type = ?1  ORDER BY revision DESC LIMIT 1")
     FileEntity getLatestFileByFileType(String fileType);
+
+
 }

@@ -15,23 +15,19 @@ import org.springframework.stereotype.Component;
         prefix = "file"
 )
 @Entity
-@Table(
-        name = "files"
-)
+@Table(name = "files")
 public class FileEntity {
+
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.AUTO
-    )
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(
             name = "file_id"
     )
     private int id;
-    @Column(
-            name = "file_type",
-            columnDefinition = "varchar(255)"
-    )
+
+    @Column(name = "file_type", columnDefinition = "varchar(255)")
     private String fileType;
+
     @Column(
             name = "file_name",
             columnDefinition = "varchar(255)"
