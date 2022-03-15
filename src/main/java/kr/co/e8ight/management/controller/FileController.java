@@ -22,10 +22,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping({"api"})
 public class FileController {
-    @Autowired
-    FileService fileService;
 
-    public FileController() {
+    private final FileService fileService;
+
+    public FileController(FileService fileService) {
+        this.fileService = fileService;
     }
 
     @ApiOperation(

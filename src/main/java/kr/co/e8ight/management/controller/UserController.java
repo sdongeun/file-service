@@ -2,7 +2,6 @@ package kr.co.e8ight.management.controller;
 
 import kr.co.e8ight.management.domain.entity.User;
 import kr.co.e8ight.management.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,10 +14,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping({"api"})
 public class UserController {
-    @Autowired
-    UserService service;
 
-    public UserController() {
+    private final UserService service;
+
+    public UserController(UserService service) {
+        this.service = service;
     }
 
     @PostMapping({"/join"})

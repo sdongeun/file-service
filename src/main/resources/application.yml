@@ -8,20 +8,31 @@ spring:
   cloud:
     config:
       name: file-service,common-setting
-  datasource:
-    url: jdbc:postgresql://172.16.28.217:5433/filerepo
-    user: "ndxservice"
-    password: "ndxpro123@"
 
-  jpa:
-    hibernate:
-      ddl-auto: update
-      generate-ddl: true
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://172.16.28.217:5433/filerepo
+#    user: "ndxservice"
+#    password: "ndxpro123@"
+
+#  zipkin:
+#    base-url: http://172.16.28.217:9411
+#    enabled: true
+#  sleuth:
+#    sampler:
+#      probability: 1.0
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      generate-ddl: true
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
 #
 #  servlet:
 #    multipart:
@@ -34,11 +45,3 @@ spring:
 #eureka:
 #  instance:
 #    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-#
-#spring:
-#  zipkin:
-#    base-url: http://172.16.28.217:9411
-#    enabled: true
-#  sleuth:
-#    sampler:
-#      probability: 1.0

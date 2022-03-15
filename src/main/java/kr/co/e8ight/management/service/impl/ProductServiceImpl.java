@@ -7,16 +7,16 @@ import kr.co.e8ight.management.domain.entity.Product;
 import kr.co.e8ight.management.domain.repository.ProductRepository;
 import kr.co.e8ight.management.dto.ProductDto;
 import kr.co.e8ight.management.service.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-    @Autowired
-    ProductRepository productRepository;
 
-    public ProductServiceImpl() {
+    private final ProductRepository productRepository;
+
+    public ProductServiceImpl(ProductRepository productRepository) {
+        this.productRepository = productRepository;
     }
 
     @Transactional

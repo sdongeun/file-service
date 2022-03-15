@@ -29,13 +29,14 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 @Service
 public class FileServiceImpl implements FileService {
     private final Path fileStorageLocation;
-    @Autowired
-    FileRepository fileRepository;
-    @Autowired
-    UserRequestRepository userRequestRepository;
+    private final FileRepository fileRepository;
+    private final UserRequestRepository userRequestRepository;
 
     @Autowired
-    public FileServiceImpl(FileEntity file) {
+    public FileServiceImpl(FileEntity file, FileRepository fileRepository, UserRequestRepository userRequestRepository) {
+        this.fileRepository = fileRepository;
+        this.userRequestRepository = userRequestRepository;
+
         this.fileStorageLocation = Paths.get(file.getUploadDir()).toAbsolutePath().normalize();
 
         try {

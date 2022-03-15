@@ -4,16 +4,16 @@ import java.util.Optional;
 import kr.co.e8ight.management.domain.entity.User;
 import kr.co.e8ight.management.domain.repository.UserRepository;
 import kr.co.e8ight.management.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
-    UserRepository userRepository;
 
-    public UserServiceImpl() {
+    private final UserRepository userRepository;
+
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Transactional
