@@ -2,7 +2,7 @@ spring:
   application:
     name: file-service
   config:
-    import: "optional:configserver:http://172.23.0.3:8888"
+    import: "optional:configserver:http://172.16.28.217:8888"
   cloud:
     config:
       name: file-service,common-setting
