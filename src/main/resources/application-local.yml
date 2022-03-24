@@ -7,7 +7,7 @@ spring:
     name: file-service
   datasource:
     url: jdbc:postgresql://172.16.28.217:5433/filerepo
-    user: "ndxservice"
+    username: "ndxservice"
     password: "ndxpro123@"
   jpa:
     hibernate:
